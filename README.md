@@ -2,7 +2,7 @@
 Flix is an app that allows users to browse movies from the [The Movie Database API](http://docs.themoviedb.apiary.io/#).
 
 📝 `NOTE - PASTE PART 2 SNIPPET HERE:` Paste the README template for part 2 of this assignment here at the top. This will show a history of your development process, which users stories you completed and how your app looked and functioned at each step.
-
+Part 2 pending.
 ---
 
 ## Flix Part 1
@@ -21,12 +21,10 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [ ] (2pts) For popular movies (i.e. a movie voted for more than 5 stars), the full backdrop image is displayed. Otherwise, a poster image, the movie title, and overview is listed. Use Heterogenous RecyclerViews and use different ViewHolder layout files for popular movies and less popular ones.
 
 ### App Walkthough GIF
-`TODO://` Add the URL to your animated app walkthough `gif` in the image tag below, `YOUR_GIF_URL_HERE`. Make sure the gif actually renders and animates when viewing this README. (🚫 Remove this paragraph after after adding gif)
-
 <img src="WalkthroughForFlickster2.gif" width=250><br>
 
 ### Notes
-Describe any challenges encountered while building the app.
+The bigest challenges in this unit was having the recycler view show my data properly. I ended up having to place the title above the picture instead of to the right of the image. This allowed the app to run great and look good in the end but it was a pain to set up. Another issue was implementing the adapter methods. I had to change some of the lables on the created cunstructors to continue. I also had issues getting a Json response and had to remake the app from scratch to find my error, yikes. I plan to keep working on it to make it better before the submission time.
 
 ### Open-source libraries used
 
