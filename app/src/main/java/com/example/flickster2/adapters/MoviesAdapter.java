@@ -17,6 +17,7 @@ import com.example.flickster2.models.Movie;
 
 import java.util.List;
 
+
 public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder>{
 
     Context context;
@@ -74,5 +75,6 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             Glide.with(context).load(imageUrl).into(ivPoster);
 
         }
+
     }
 }
