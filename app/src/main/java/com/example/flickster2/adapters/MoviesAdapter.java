@@ -1,8 +1,10 @@
 package com.example.flickster2.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Configuration;
 import android.support.annotation.NonNull;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,13 +14,16 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.example.flickster2.DetailActivity;
 import com.example.flickster2.R;
 import com.example.flickster2.models.Movie;
+
+import org.parceler.Parcels;
 
 import java.util.List;
 
 
-public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder>{
+public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder> {
 
     Context context;
     List<Movie> movies;
@@ -54,6 +59,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
         TextView tvTitle;
         TextView tvOverview;
         ImageView ivPoster;
+        ConstraintLayout container;
 
 
         public ViewHolder(@NonNull View itemView) {
@@ -61,9 +67,11 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             tvTitle = itemView.findViewById(R.id.tvTitle);
             tvOverview = itemView.findViewById(R.id.tvOverview);
             ivPoster = itemView.findViewById(R.id.ivPoster);
+            container = itemView.findViewById(R.id.container);
+
         }
 
-        public void bind(Movie movie) {
+        public void bind(final Movie movie) {
             tvTitle.setText(movie.getTitle());
             tvOverview.setText(movie.getOverview());
             String imageUrl = movie.getPosterPath();
@@ -71,10 +79,22 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.ViewHolder
             if (context.getResources().getConfiguration().orientation == Configuration.ORIENTATION_LANDSCAPE)
                 imageUrl = movie.getBackdropPath();
 
-
             Glide.with(context).load(imageUrl).into(ivPoster);
+            // Add click listener on the whole row
+            container.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    // Navigate to detail activity on tap
+                    Intent i = new Intent(context, DetailActivity.class);
+                    i.putExtra("movie", Parcels.wrap(movie));
+                    context.startActivity(i);
+                }
+            });
+
+
 
         }
 
     }
 }
+

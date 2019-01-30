@@ -1,14 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_width="500dp"
+    android:layout_height="400dp">
 
     <ImageView
         android:id="@+id/ivPoster"
-        android:layout_width="452dp"
+        android:layout_width="250dp"
         android:layout_height="451dp"
         android:layout_marginStart="8dp"
         android:layout_marginEnd="280dp"
@@ -21,7 +20,7 @@
     <TextView
         android:id="@+id/tvTitle"
         android:layout_width="304dp"
-        android:layout_height="61dp"
+        android:layout_height="66dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -37,7 +36,7 @@
 
     <TextView
         android:id="@+id/tvOverview"
-        android:layout_width="192dp"
+        android:layout_width="196dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"

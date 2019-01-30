@@ -3,19 +3,27 @@ package com.example.flickster2.models;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+import org.parceler.Parcel;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Parcel
 public class Movie {
 
 
-    int movieId;
     double voteAverage;
+    int movieId;
+    
     String posterPath;
     String title;
     String overview;
     String backdropPath;
+
+
+    // empty constructor needed by the Parceler library
+    public Movie() {
+    }
 
     public Movie(JSONObject jsonObject) throws JSONException {
         posterPath = jsonObject.getString("poster_path");
@@ -40,9 +48,7 @@ public class Movie {
         return String.format("https://image.tmdb.org/t/p/w342/%s", posterPath);
     }
 
-    public double getVoteAverage() {
-        return voteAverage;
-    }
+
 
     public int getMovieId() {
         return movieId;
@@ -60,4 +66,11 @@ public class Movie {
     public String getOverview() {
         return overview;
     }
+
+    public double getVoteAverage(){
+        return voteAverage;
+    }
+
+
+
 }
